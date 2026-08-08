@@ -1,0 +1,69 @@
+# Nox 公式サイト — Jekyll + GitHub Pages
+title: "Nox"
+tagline: "型推論の効いた、ネイティブコンパイル言語"
+description: >-
+  Nox は静的型付け・強力な型推論を持つプログラミング言語です。生成した C を
+  同梱の nox-tcc でコンパイルし、依存なしでネイティブバイナリを作ります。
+url: "https://nox-lang.f5.si"
+baseurl: ""
+
+title_separator: "·"
+github_repo: "https://github.com/nox-lang/nox"
+github_org: "https://github.com/nox-lang"
+
+author:
+  name: "Nox Language Project"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    disable : true
+permalink: /blog/:year/:month/:day/:title/
+
+collections:
+  docs:
+    output: true
+    permalink: /docs/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "doc"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules
+
+nav:
+  - title: "はじめる"
+    url: "/docs/beginners/"
+  - title: "他言語から"
+    url: "/docs/from-other-languages/"
+  - title: "ドキュメント"
+    url: "/docs/"
+  - title: "ブログ"
+    url: "/blog/"
