@@ -1,0 +1,109 @@
+// ヒーロー -----------------------------------------------------------
+.hero {
+  background: radial-gradient(ellipse 900px 500px at 82% -10%, rgba($navy, 0.55), transparent 60%), $navy-deep;
+  color: $white;
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0 88px;
+}
+
+.hero__moon {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 320px;
+  height: 320px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+}
+
+.hero__eyebrow {
+  color: $moonlight;
+  font-family: $font-mono;
+  font-size: 0.85rem;
+  margin: 0 0 18px;
+  opacity: 0.85;
+}
+
+.hero h1 {
+  color: $white;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  margin-bottom: 20px;
+}
+.hero h1 span { color: $moonlight; }
+
+.hero p.lead {
+  color: rgba($white, 0.82);
+  font-size: 1.1rem;
+  max-width: 46ch;
+  margin-bottom: 32px;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: $radius-sm;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.btn-primary {
+  background: $moonlight;
+  color: $navy-deep;
+}
+.btn-primary:hover { background: $white; }
+.btn-ghost {
+  background: transparent;
+  border-color: rgba($white, 0.3);
+  color: $white;
+}
+.btn-ghost:hover { border-color: $white; }
+
+.hero__panel {
+  background: rgba($white, 0.04);
+  border: 1px solid rgba($moonlight, 0.22);
+  border-radius: $radius-md;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(#000, 0.35);
+}
+.hero__panel-bar {
+  display: flex;
+  gap: 6px;
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba($moonlight, 0.15);
+}
+.hero__panel-bar span {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: rgba($gray, 0.4);
+}
+.hero__panel pre {
+  background: none;
+  margin: 0;
+  border-radius: 0;
+  padding: 20px 22px;
+  font-size: 0.88rem;
+}
+.hero__panel .prompt { color: $moonlight; }
+.hero__panel .out { color: rgba($white, 0.65); }
+
+@media (max-width: 900px) {
+  .hero__grid { grid-template-columns: 1fr; }
+  .hero { padding: 52px 0 60px; }
+}

@@ -1,0 +1,124 @@
+// ナビゲーション -----------------------------------------------------
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba($paper, 0.86);
+  backdrop-filter: blur(8px);
+  border-bottom: $border;
+}
+
+.site-nav__bar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 64px;
+}
+
+.site-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: $navy;
+  margin-right: auto;
+}
+.site-nav__brand img { height: 28px; width: 28px; }
+
+.site-nav__links {
+  display: flex;
+  gap: 24px;
+  font-size: 0.95rem;
+}
+.site-nav__links a {
+  color: $navy-ink;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+}
+.site-nav__links a:hover,
+.site-nav__links a.active {
+  color: $navy;
+  border-bottom-color: $moonlight-deep;
+}
+
+.site-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-nav__search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: $border;
+  background: $white;
+  border-radius: 999px;
+  padding: 6px 12px;
+  color: $navy-ink;
+  font-size: 0.88rem;
+}
+.site-nav__search svg { width: 15px; height: 15px; opacity: 0.6; flex: none; }
+.site-nav__search input {
+  border: none;
+  outline: none;
+  background: none;
+  width: 128px;
+  font-family: $font-display;
+  font-size: 0.88rem;
+  color: $navy-ink;
+}
+.site-nav__search kbd {
+  font-size: 0.72rem;
+  border: 1px solid $gray-soft;
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: $gray;
+  background: $paper;
+}
+
+.site-nav__gh {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: $navy;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.site-nav__gh svg { width: 18px; height: 18px; }
+
+.site-nav__toggle {
+  display: none;
+  border: none;
+  background: none;
+  padding: 6px;
+  cursor: pointer;
+}
+.site-nav__toggle svg { width: 22px; height: 22px; color: $navy; }
+
+@media (max-width: 860px) {
+  .site-nav__links { display: none; }
+  .site-nav__search { display: none; }
+  .site-nav__toggle { display: block; }
+
+  .site-nav.is-open .site-nav__links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    background: $paper;
+    border-bottom: $border;
+    padding: 8px 24px 20px;
+    gap: 4px;
+  }
+  .site-nav.is-open .site-nav__search {
+    display: flex;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    margin: 0 24px;
+    transform: translateY(196px);
+    width: calc(100% - 48px);
+  }
+  .site-nav.is-open .site-nav__search input { width: 100%; }
+}

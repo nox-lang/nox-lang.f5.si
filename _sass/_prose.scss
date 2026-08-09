@@ -1,0 +1,117 @@
+// ドキュメント／ブログ本文 ---------------------------------------------
+.prose-page {
+  padding: 52px 0 90px;
+}
+.prose-layout {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+.prose-layout > .toc { flex: 0 0 200px; }
+.prose-layout > .prose { flex: 1 1 auto; min-width: 0; }
+.prose-header {
+  padding: 40px 0 8px;
+  border-bottom: $border;
+  margin-bottom: 8px;
+}
+.prose-header .section__kicker { margin-bottom: 12px; }
+.prose-header h1 { margin-bottom: 10px; }
+.prose-header p { color: rgba($navy-ink, 0.7); max-width: 62ch; }
+
+.toc {
+  position: sticky;
+  top: 88px;
+  font-size: 0.88rem;
+}
+.toc h4 {
+  font-size: 0.78rem;
+  text-transform: none;
+  color: $gray;
+  font-family: $font-mono;
+  margin-bottom: 12px;
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin-bottom: 9px; }
+.toc a {
+  color: $navy-ink;
+  border-bottom: none;
+  display: block;
+  padding: 2px 0 2px 10px;
+  border-left: 2px solid $gray-soft;
+}
+.toc a:hover, .toc a.active {
+  color: $moonlight-deep;
+  border-left-color: $moonlight-deep;
+}
+.toc .toc--sub { margin-left: 10px; }
+
+.prose {
+  max-width: 74ch;
+}
+.prose h2 {
+  margin-top: 2.2em;
+  padding-top: 0.2em;
+  scroll-margin-top: 84px;
+}
+.prose h3 { margin-top: 1.8em; scroll-margin-top: 84px; }
+.prose ul, .prose ol { padding-left: 1.3em; margin-bottom: 1.1em; }
+.prose li { margin-bottom: 0.4em; }
+.prose li > p:last-child { margin-bottom: 0; }
+.prose blockquote {
+  margin: 1.4em 0;
+  padding: 4px 20px;
+  border-left: 3px solid $moonlight-deep;
+  background: $moonlight-pale;
+  border-radius: 0 $radius-sm $radius-sm 0;
+  color: $navy-ink;
+}
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.4em 0;
+  font-size: 0.92rem;
+}
+.prose th, .prose td {
+  border: $border;
+  padding: 8px 12px;
+  text-align: left;
+}
+.prose th { background: $paper; }
+.prose hr {
+  border: none;
+  border-top: $border;
+  margin: 2.4em 0;
+}
+.prose .highlight { margin-bottom: 1.4em; }
+
+// Rouge シンタックスハイライト（紺コードパネル向け配色）
+.highlight, pre.highlight {
+  .c, .c1, .cm { color: #8B8FB8; font-style: italic; } // comment
+  .k, .kd, .kn, .kr { color: $moonlight; }              // keyword
+  .s, .s1, .s2 { color: #A8E0B9; }                       // string
+  .n, .nx { color: $code-text; }
+  .nf, .nc { color: #9FD1F0; }                           // function/class name
+  .mi, .mf { color: #E3A857; }                           // number
+  .o { color: $gray; }
+  .p { color: rgba($code-text, 0.7); }
+}
+
+.prev-next {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: $border;
+  font-size: 0.92rem;
+}
+.prev-next a { border-bottom: none; }
+.prev-next .dir { display: block; font-family: $font-mono; font-size: 0.76rem; color: $gray; margin-bottom: 4px; }
+.prev-next .next { margin-left: auto; text-align: right; }
+
+@media (max-width: 860px) {
+  .prose-layout { flex-direction: column; }
+  .toc { position: static; margin-bottom: 8px; padding-bottom: 20px; border-bottom: $border; }
+  .toc ul { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  .toc li { margin-bottom: 4px; }
+}

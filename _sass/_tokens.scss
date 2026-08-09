@@ -1,0 +1,25 @@
+// Nox サイト デザイントークン ------------------------------------------
+// ロゴ（三日月 + N）から採った紺と銀を核に、"夜" を軸にした配色。
+$navy-deep:   #120E38; // 最も暗い紺 — ヒーロー/フッター/コードパネル背景
+$navy:        #1F1957; // ロゴ本体の紺 — 見出し・ブランドカラー
+$navy-ink:    #17143A; // 本文用の黒に近い紺（白背景の上のテキスト）
+$gray:        #B7B7BC; // ロゴの銀
+$gray-soft:   #E3E3E8; // 淡い罫線・区切り
+$paper:       #F7F7FA; // ページ背景（クリーム寄りを避けた寒色オフホワイト）
+$white:       #FFFFFF;
+$moonlight:       #AEB8F7; // 暗い背景の上のアクセント（リンク・プロンプト）
+$moonlight-deep:  #5A62C4; // 白背景の上のアクセント（リンク・ボタン）
+$moonlight-pale:  #EDEEFC; // ごく薄いアクセント背景
+$code-bg:     #15112F;
+$code-text:   #E6E5F5;
+$amber:       #E3A857; // ごく控えめな警告・強調用の差し色（コード中のコメント等）
+
+$font-display: "Space Grotesk", "Hiragino Sans", "Noto Sans JP", sans-serif;
+$font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+$max-width: 1120px;
+$radius-sm: 3px;
+$radius-md: 6px;
+
+$border: 1px solid $gray-soft;
+$border-dark: 1px solid rgba($gray, 0.25);
