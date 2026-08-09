@@ -1,0 +1,40 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="">
+          Nox
+        </div>
+        <p class="footer__tag">型推論の効いた、ネイティブコンパイル言語。生成した C を nox-tcc でコンパイルし、依存なしでバイナリを作ります。</p>
+      </div>
+      <div class="footer__col">
+        <h4>ドキュメント</h4>
+        <ul>
+          <li><a href="{{ '/docs/beginners/' | relative_url }}">はじめてのプログラミング</a></li>
+          <li><a href="{{ '/docs/from-other-languages/' | relative_url }}">他の言語から</a></li>
+          <li><a href="{{ '/docs/' | relative_url }}">言語リファレンス</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>プロジェクト</h4>
+        <ul>
+          <li><a href="{{ '/blog/' | relative_url }}">ブログ</a></li>
+          <li><a href="{{ site.github_repo }}">ソースコード</a></li>
+          <li><a href="{{ site.github_repo }}/issues">Issue を報告</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>コミュニティ</h4>
+        <ul>
+          <li><a href="{{ site.github_org }}">nox-lang organization</a></li>
+          <li><a href="{{ '/feed.xml' | relative_url }}">RSS フィード</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; {{ 'now' | date: "%Y" }} Nox Language Project</span>
+      <span>Built with Jekyll, hosted on GitHub Pages</span>
+    </div>
+  </div>
+</footer>
