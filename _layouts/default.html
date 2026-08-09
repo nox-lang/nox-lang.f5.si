@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ja">
+{% include head.html %}
+<body>
+  <script>window.NOX_BASEURL = "{{ site.baseurl }}";</script>
+  {% include nav.html %}
+  <main>
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

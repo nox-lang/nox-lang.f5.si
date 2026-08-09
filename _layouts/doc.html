@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div class="prose-header">
+  <div class="container">
+    <p class="section__kicker">ドキュメント</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+  </div>
+</div>
+<div class="container prose-page">
+  <div class="prose-layout">
+    <aside class="toc" id="toc">
+      <h4>この記事の内容</h4>
+      <div id="toc-list"></div>
+    </aside>
+    <article class="prose" id="doc-content">
+      {{ content }}
+
+      {% if page.prev or page.next %}
+      <div class="prev-next">
+        {% if page.prev %}
+          <a href="{{ page.prev | relative_url }}"><span class="dir">← 前へ</span>{{ page.prev_title }}</a>
+        {% endif %}
+        {% if page.next %}
+          <a class="next" href="{{ page.next | relative_url }}"><span class="dir">次へ →</span>{{ page.next_title }}</a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </article>
+  </div>
+</div>
+<script src="{{ '/assets/js/toc.js' | relative_url }}"></script>
