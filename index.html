@@ -1,0 +1,138 @@
+---
+layout: home
+---
+<section class="hero">
+  {% include icon-moon.html %}
+  <div class="container hero__grid">
+    <div>
+      <p class="hero__eyebrow">$ nox build</p>
+      <h1>型を、<span>書く前から。</span></h1>
+      <p class="lead">
+        Nox は静的型付け・強力な型推論を持つコンパイル言語です。生成した C を
+        同梱の nox-tcc でコンパイルし、外部ツールなしでネイティブバイナリを
+        作ります。<code style="background:rgba(255,255,255,.08);color:#AEB8F7">let</code> と書くだけで、型はコンパイラが決めます。
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn-primary" href="{{ '/docs/beginners/' | relative_url }}">はじめる</a>
+        <a class="btn btn-ghost" href="{{ site.github_repo }}">GitHub で見る</a>
+      </div>
+    </div>
+
+    <div class="hero__panel">
+      <div class="hero__panel-bar"><span></span><span></span><span></span></div>
+      <pre><code><span class="prompt">$</span> cat hello.nox
+package main
+
+import(
+    "io"
+)
+
+func Main() {
+    io::Println("Hello, World!")
+}
+
+<span class="prompt">$</span> nox build hello.nox
+<span class="out">compiling -> hello (linux/amd64) via bundled nox-tcc
+built hello</span>
+
+<span class="prompt">$</span> ./hello
+<span class="out">Hello, World!</span></code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <p class="section__kicker">なぜ Nox か</p>
+      <h2>小さく書いて、速く動かす。</h2>
+      <p>型を手で書く手間を型推論に任せ、ビルドの手間を同梱ツールチェーンに任せる。書いたコードだけに集中できます。</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="feature">
+        <span class="feature__mark">let x = …</span>
+        <h3>強力な型推論</h3>
+        <p><code>let</code> と書くだけで、型はコンパイラが式から決めます。もちろん <code>let x: int</code> のように明示も可能です。</p>
+      </div>
+      <div class="feature">
+        <span class="feature__mark">nox build</span>
+        <h3>ツール不要のネイティブビルド</h3>
+        <p>nox-tcc を内部に完全統合。別途コンパイラのインストールは不要です。初回ビルド時に自前でソースからビルドし、以降はキャッシュを使います。</p>
+      </div>
+      <div class="feature">
+        <span class="feature__mark">NOX_OS=windows</span>
+        <h3>クロスコンパイルもそのまま</h3>
+        <p>環境変数ひとつで Windows 向けバイナリを生成。非同期処理を含め、Linux 上で作った実行ファイルがそのまま動きます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__head">
+      <p class="section__kicker">言語機能</p>
+      <h2>必要なものは、だいたい揃っています。</h2>
+      <p>スライスと配列は明確に区別し、連想配列・static メンバー・スレッド/タスクまで、言語のコアとして持っています。</p>
+    </div>
+
+    <div class="code-row">
+      <div class="code-card">
+        <p class="code-card__label">slice, array, map</p>
+        <pre><code>let xs: []int = [1, 2, 3]
+let fixed: [3]int = [3]int{1, 2, 3}
+let big = make([]int, 0, 16)
+
+let ages: map&lt;string, int&gt; = {
+    "alice": 30,
+    "bob": 25,
+}
+for (name, age in ages) {
+    io::Printfn("{}: {}", name, age)
+}</code></pre>
+      </div>
+      <div class="code-card">
+        <p class="code-card__label">static, Thread, Task</p>
+        <pre><code>class Counter {
+    static let Total: int = 0
+
+    static func Bump(): int {
+        Counter.Total += 1
+        return Counter.Total
+    }
+}
+
+let t = Task.Run(() {
+    return heavyWork()
+})
+io::Println(t.Result)</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <p class="section__kicker">はじめる</p>
+      <h2>ふたつの入り口</h2>
+      <p>プログラミングそのものが初めてか、他の言語をすでに知っているかで読む場所を分けています。</p>
+    </div>
+
+    <div class="paths">
+      <a class="path-card plain" href="{{ '/docs/beginners/' | relative_url }}">
+        <span class="path-card__tag">初心者向け</span>
+        <h3>はじめてのプログラミング</h3>
+        <p>プログラミング自体がはじめての方向け。変数・関数・繰り返しといった基礎から、Nox のコードで説明します。</p>
+        <span class="go">読みはじめる →</span>
+      </a>
+      <a class="path-card plain" href="{{ '/docs/from-other-languages/' | relative_url }}">
+        <span class="path-card__tag">経験者向け</span>
+        <h3>他の言語を知っている方へ</h3>
+        <p>Python・Go・Rust・C/C++ 経験者向け。知っている概念との対応で、Nox 独自の部分を素早くキャッチアップ。</p>
+        <span class="go">読みはじめる →</span>
+      </a>
+    </div>
+  </div>
+</section>
