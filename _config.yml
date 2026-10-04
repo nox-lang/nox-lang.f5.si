@@ -1,11 +1,12 @@
 # Nox 公式サイト — Jekyll + GitHub Pages
-title: "Nox"
+title: "Nox - 小さく書いて、速く動かすプログラミング言語"
 tagline: "型推論の効いた、ネイティブコンパイル言語"
 description: >-
   Nox は静的型付け・強力な型推論を持つプログラミング言語です。生成した C を
   同梱の nox-tcc でコンパイルし、依存なしでネイティブバイナリを作ります。
 url: "https://nox-lang.f5.si"
 baseurl: ""
+lang: ja
 
 title_separator: "·"
 github_repo: "https://github.com/nox-lang/nox"
